@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductThumbnailComponent } from './products/product-thumbnail/product-thumbnail.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
