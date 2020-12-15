@@ -1,0 +1,8 @@
+<div class="container text-center py-1 border text-dark">
+    <a routerLink="/detail/{{product.slug}}">
+        <img class="img-fluid mx-auto d-block" [src]="product.image" [alt]="product.name"
+            style="width: 220px;height: 220px;" />
+        <h5 class="mt-2">{{product.name}}</h5>
+    </a>
+    <h5> قیمت: {{product.price}}</h5>
+</div>
