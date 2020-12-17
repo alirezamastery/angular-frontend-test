@@ -1,8 +1,14 @@
-<div class="container text-center py-1 border text-dark">
+<div class="text-center product-thumbnail">
+
     <a routerLink="/detail/{{product.slug}}">
-        <img class="img-fluid mx-auto d-block" [src]="product.image" [alt]="product.name"
-            style="width: 220px;height: 220px;" />
-        <h5 class="mt-2">{{product.name}}</h5>
+
+        <img class="img-fluid" [src]="product.image" [alt]="product.name" style="width: 220px;height: 220px;" />
+
+        <div style="height: 40px;">
+            <p class="mt-2">{{product.name}}</p>
+        </div>
+
     </a>
-    <h5> قیمت: {{product.price}}</h5>
+    <p> قیمت: {{product.price}}</p>
+
 </div>

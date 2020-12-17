@@ -12,6 +12,12 @@ import { ProductThumbnailComponent } from './products/product-thumbnail/product-
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// material:
+import { MatGridListModule } from '@angular/material/grid-list';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HeaderMainComponent } from './header/header-main/header-main.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductListComponent,
     ProductThumbnailComponent,
     ProductDetailComponent,
+    HeaderMainComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatGridListModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
