@@ -18,7 +18,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderMainComponent } from './header/header-main/header-main.component';
 import { FooterMainComponent } from './footer/footer-main/footer-main.component';
-import { FilterComponent } from './products/search/filter/filter.component';
+import { SearchComponent } from './products/filter/search/search.component';
+import { OrderingButtonsComponent } from './products/filter/ordering-buttons/ordering-buttons.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FilterComponent } from './products/search/filter/filter.component';
     ProductDetailComponent,
     HeaderMainComponent,
     FooterMainComponent,
-    FilterComponent,
+    SearchComponent,
+    OrderingButtonsComponent,
   ],
   imports: [
     BrowserModule,
