@@ -17,6 +17,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderMainComponent } from './header/header-main/header-main.component';
+import { FooterMainComponent } from './footer/footer-main/footer-main.component';
+import { FilterComponent } from './products/search/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { HeaderMainComponent } from './header/header-main/header-main.component'
     ProductThumbnailComponent,
     ProductDetailComponent,
     HeaderMainComponent,
+    FooterMainComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,

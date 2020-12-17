@@ -1,0 +1,10 @@
+@import'./bs_colors.css';
+
+
+.bg-dark {
+    background-color: var(--gray-dark);
+}
+
+.bg-white {
+    background-color: white;
+}

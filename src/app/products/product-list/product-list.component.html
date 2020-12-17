@@ -6,7 +6,7 @@
 <div *ngIf="products">
     <!-- <mat-grid-list cols="3" rowHeight="1:1.2" [gutterSize]="'0px'"> -->
     <!-- <mat-grid-tile *ngFor="let product of products"> -->
-    <div class="container border">
+    <div class="container product-list">
         <app-product-thumbnail *ngFor="let product of products" [product]="product"></app-product-thumbnail>
     </div>
     <!-- </mat-grid-tile> -->
