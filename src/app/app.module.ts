@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductMainComponent } from './products/product-main/product-main.component';
 
 import { FormsModule } from '@angular/forms';   // <-- NgModel lives here
+import { ReactiveFormsModule } from '@angular/forms';  // for reactive forms
 import { HttpClientModule } from '@angular/common/http';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductThumbnailComponent } from './products/product-thumbnail/product-thumbnail.component';
@@ -37,10 +38,11 @@ import { OrderingButtonsComponent } from './products/filter/ordering-buttons/ord
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule, // import HttpClientModule after BrowserModule.
     BrowserAnimationsModule,
     MatGridListModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

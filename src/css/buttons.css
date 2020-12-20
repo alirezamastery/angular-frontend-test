@@ -17,11 +17,6 @@
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
-button[class*='bt']:hover {
-    color: #212529;
-    text-decoration: none
-}
-
 .btn.focus, .btn:focus {
     outline: 0;
     box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
@@ -61,3 +56,9 @@ button[class*='bt']:hover {
 .test-btn:active {
     background-color: rgb(2, 56, 56);
 }
+
+/* 
+button[class*='bt']:hover {
+    color: #212529;
+    text-decoration: none
+} */

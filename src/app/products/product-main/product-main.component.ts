@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-main.component.css']
 })
 export class ProductMainComponent implements OnInit {
+  public clickedEvent!: Event;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  childEventClicked(event: Event) {
+    this.clickedEvent = event;
   }
 
 }

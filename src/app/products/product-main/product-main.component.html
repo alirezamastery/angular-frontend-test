@@ -1,11 +1,11 @@
 <div class="container bg-white mt-5 shadow">
     <div class="row">
         <div class="col-3 border p-2">
+            <app-search (eventClicked)="childEventClicked($event)"></app-search>
         </div>
         <div class="col-9 p-1">
             <app-ordering-buttons></app-ordering-buttons>
-
-            <app-product-list></app-product-list>
+            <app-product-list [filterEvent]="clickedEvent"></app-product-list>
         </div>
     </div>
 </div>
