@@ -23,6 +23,7 @@ import { SearchComponent } from './products/filter/search/search.component';
 import { OrderingButtonsComponent } from './products/filter/ordering-buttons/ordering-buttons.component';
 import { DynamicFormComponent } from './products/filter/dynamic-form/dynamic-form.component';
 import { DynamicFormFilterComponent } from './products/filter/dynamic-form-filter/dynamic-form-filter.component'
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { DynamicFormFilterComponent } from './products/filter/dynamic-form-filte
     MatGridListModule,
     FlexLayoutModule,
     ReactiveFormsModule,
+    NgxSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

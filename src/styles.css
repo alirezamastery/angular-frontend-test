@@ -5,6 +5,7 @@
 @import './css/background.css';
 @import './css/align.css';
 @import './css/buttons.css';
+@import "~nouislider/distribute/nouislider.min.css";
 * {
     box-sizing: border-box;
 }

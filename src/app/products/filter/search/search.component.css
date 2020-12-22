@@ -1,0 +1,46 @@
+div.rect {
+    width: 100px;
+    height: 0;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blueviolet;
+    transition-duration: 0.5s;
+    position: relative;
+}
+
+/* .rect:hover {
+    background-color: rgb(43, 226, 67);
+    width: 100px;
+    height: 100px;
+} */
+
+.hoverClass {
+    width: 100px!important;
+    height: 100px!important;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background: goldenrod;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+}
+
+.box:hover {
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+.uni {
+    -webkit-transition-property: background-color;
+    -moz-transition-property: background-color;
+    -o-transition-property: background-color;
+    transition-property: background-color;
+}

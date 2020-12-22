@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 import { ProductService } from 'src/app/product.service';
 import { FilterOptionsApiService } from 'src/app/services/filter-options-api.service';
 import { FilterBase } from '../filter-base';
+import { Options } from '@angular-slider/ngx-slider';
+import { animation } from '@angular/animations';
 
 
 @Component({
@@ -26,6 +28,16 @@ export class SearchComponent implements OnInit {
         nameFilter: ['', Validators.maxLength(50)],
     });
 
+    divActive: Boolean = false  //for dropdown div
+
+    minValue: number = 50; //for slider
+    maxValue: number = 200;
+    options: Options = {
+        floor: 0,
+        ceil: 250,
+        animate: false,
+    };
+
     constructor(
         private fb: FormBuilder,
         private productService: ProductService,
@@ -44,6 +56,10 @@ export class SearchComponent implements OnInit {
     onSubmit() {
         this.eventFilterSubmit.emit(this.filterProductsForm.value)
         // this.productService.filterProducts(this.filterProductsForm.value)
+    }
+
+    onActive() {
+        this.divActive = !this.divActive;
     }
 
     // updateProfile() {

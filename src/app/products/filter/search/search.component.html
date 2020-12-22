@@ -6,6 +6,16 @@
     <button type="submit" class="" (click)="onClick(keyword)">اعمال فیلتر</button>
     <hr>
 
+    <button class="rect-btn" (click)="onActive()">filter dropdown</button>
+    <div class="rect" [ngClass]="divActive ? 'hoverClass' : ''">
+    </div>
+    <ngx-slider
+        [(value)]="minValue"
+        [(highValue)]="maxValue"
+        [options]="options">
+    </ngx-slider>
+    <hr>
+
     <app-dynamic-form [filters]="filters$ | async"></app-dynamic-form>
 
 </form>
