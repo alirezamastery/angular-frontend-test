@@ -2,7 +2,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'; // we use FormBuilder instead
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+
 import { ProductService } from 'src/app/product.service';
+import { FilterOptionsApiService } from 'src/app/services/filter-options-api.service';
+import { FilterBase } from '../filter-base';
+
 
 @Component({
     selector: 'app-search',
@@ -10,9 +15,10 @@ import { ProductService } from 'src/app/product.service';
     styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+    filters$: Observable<any>;
 
-    @Output() eventClicked = new EventEmitter<Event>();
-    @Output() eventFilterSubmit = new EventEmitter<Event>();
+    @Output() eventClicked = new EventEmitter<Event>();       //both do same thing with different approaches
+    @Output() eventFilterSubmit = new EventEmitter<Event>();  //both do same thing with different approaches
 
     // name = new FormControl('');
 
@@ -22,8 +28,11 @@ export class SearchComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private productService: ProductService
-    ) { }
+        private productService: ProductService,
+        private filterServiceApi: FilterOptionsApiService,
+    ) {
+        this.filters$ = this.filterServiceApi.getFilters();
+    }
 
     ngOnInit(): void {
     }
@@ -33,7 +42,6 @@ export class SearchComponent implements OnInit {
     }
 
     onSubmit() {
-        // TODO: Use EventEmitter with form value
         this.eventFilterSubmit.emit(this.filterProductsForm.value)
         // this.productService.filterProducts(this.filterProductsForm.value)
     }

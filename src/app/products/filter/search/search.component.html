@@ -1,7 +1,11 @@
 <form [formGroup]="filterProductsForm" (ngSubmit)="onSubmit()">
 
-    <input type="text" placeholder="جست و جو..." formControlName="nameFilter" #keyword />
+    <input type="text" placeholder="جست و جو..." formControlName="nameFilter"
+        #keyword />
 
     <button type="submit" class="" (click)="onClick(keyword)">اعمال فیلتر</button>
+    <hr>
+
+    <app-dynamic-form [filters]="filters$ | async"></app-dynamic-form>
 
 </form>

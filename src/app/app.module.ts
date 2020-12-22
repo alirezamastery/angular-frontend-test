@@ -20,7 +20,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderMainComponent } from './header/header-main/header-main.component';
 import { FooterMainComponent } from './footer/footer-main/footer-main.component';
 import { SearchComponent } from './products/filter/search/search.component';
-import { OrderingButtonsComponent } from './products/filter/ordering-buttons/ordering-buttons.component'
+import { OrderingButtonsComponent } from './products/filter/ordering-buttons/ordering-buttons.component';
+import { DynamicFormComponent } from './products/filter/dynamic-form/dynamic-form.component';
+import { DynamicFormFilterComponent } from './products/filter/dynamic-form-filter/dynamic-form-filter.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { OrderingButtonsComponent } from './products/filter/ordering-buttons/ord
     FooterMainComponent,
     SearchComponent,
     OrderingButtonsComponent,
+    DynamicFormComponent,
+    DynamicFormFilterComponent,
   ],
   imports: [
     BrowserModule,
