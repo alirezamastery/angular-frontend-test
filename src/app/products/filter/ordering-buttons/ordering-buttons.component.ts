@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-ordering-buttons',
@@ -38,9 +38,15 @@ export class OrderingButtonsComponent implements OnInit {
     }
   ]
 
+  @Output() orderingEventClicked = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClick(id: number) {
+    this.orderingEventClicked.emit(this.buttons[id].ordering)
   }
 
 }

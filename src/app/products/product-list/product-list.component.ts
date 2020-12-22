@@ -10,9 +10,12 @@ import { SharedDataService } from "src/app/services/shared-data.service";
 })
 export class ProductListComponent implements OnInit {
   @Input() filterEvent!: Event;
+  @Input() orderingEvent!: string;
+  @Input() filterSubmitEvent!: Object;
 
   products: any;
-  saerchData: string = '';
+  saerchData: Object = {};
+
 
   private subscription!: Subscription;
 
@@ -32,12 +35,22 @@ export class ProductListComponent implements OnInit {
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (!changes.filterEvent.firstChange) {
+    console.log("ProductListComponent | ngOnChanges | changes: ", changes)
+    for (const change in changes) {
+      if (Object.prototype.hasOwnProperty.call(changes, change)) {
+        const element = changes[change];
+        if (!element.firstChange) {
+          console.log("============", element.currentValue)
+        }
+      }
+    }
+
+    if (changes.filterEvent && !changes.filterEvent.firstChange) {
       const search: string = changes.filterEvent.currentValue
-      const searchObj = { search }
+      const searchObjNew = { search }
 
       this.subscription.unsubscribe()
-      this.subscription = this.productService.filterProducts(searchObj)
+      this.subscription = this.productService.filterProducts(searchObjNew)
         .subscribe((data) => {
           this.products = data.results
         })

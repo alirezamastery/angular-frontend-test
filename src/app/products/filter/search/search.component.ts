@@ -12,12 +12,13 @@ import { ProductService } from 'src/app/product.service';
 export class SearchComponent implements OnInit {
 
     @Output() eventClicked = new EventEmitter<Event>();
+    @Output() eventFilterSubmit = new EventEmitter<Event>();
 
     // name = new FormControl('');
 
-    // filterProductsForm = this.fb.group({
-    //     nameFilter: ['', Validators.maxLength(50)],
-    // });
+    filterProductsForm = this.fb.group({
+        nameFilter: ['', Validators.maxLength(50)],
+    });
 
     constructor(
         private fb: FormBuilder,
@@ -31,11 +32,11 @@ export class SearchComponent implements OnInit {
         this.eventClicked.emit(event.value);
     }
 
-    // onSubmit() {
-    //     // TODO: Use EventEmitter with form value
-    //     console.log(this.filterProductsForm.value);
-    //     this.productService.filterProducts(this.filterProductsForm.value)
-    // }
+    onSubmit() {
+        // TODO: Use EventEmitter with form value
+        this.eventFilterSubmit.emit(this.filterProductsForm.value)
+        // this.productService.filterProducts(this.filterProductsForm.value)
+    }
 
     // updateProfile() {
     //     this.filterProductsForm.patchValue({

@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-main.component.css']
 })
 export class ProductMainComponent implements OnInit {
-  public clickedEvent!: Event;
+  public clickedFilterEvent!: Event;
+  public clickedOrderingEvent!: string;
+  public clickedFilterSubmit!: Object;
 
   constructor() { }
 
@@ -14,7 +16,16 @@ export class ProductMainComponent implements OnInit {
   }
 
   childEventClicked(event: Event) {
-    this.clickedEvent = event;
+    this.clickedFilterEvent = event;
+  }
+
+  childFilterSubmit(event: Event) {
+    console.log("childFilterSubmit", event)
+    this.clickedFilterSubmit = event;
+  }
+
+  childOrderingEventClicked(event: string) {
+    this.clickedOrderingEvent = event;
   }
 
 }
